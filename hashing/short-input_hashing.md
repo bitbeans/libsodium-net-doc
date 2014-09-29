@@ -1,0 +1,3 @@
+# Short-input hashing
+
+TODO
