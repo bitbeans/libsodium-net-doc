@@ -59,11 +59,11 @@ public static byte[] Create(string message, byte[] nonce, byte[] key)
 
 The `Create()` method encrypts a `message`, with a `key` and a `nonce`.
 
-The `key` must be 32 bytes, otherwise the method throws a `KeyOutOfRangeException`.
+The `key` must be `32` bytes, otherwise the method throws a `KeyOutOfRangeException`.
 
-The `nonce` must be 24 bytes, otherwise the method throws a `NonceOutOfRangeException`.
+The `nonce` must be `24` bytes, otherwise the method throws a `NonceOutOfRangeException`.
 
-This method writes the authentication tag, whose length is 16 bytes, in the retuned byte array, immediately followed by the encrypted message.
+This method writes the authentication tag, whose length is `16` bytes, in the retuned byte array, immediately followed by the encrypted message.
 
 The method returns a byte array on success, or throws an `CryptographicException()` on failure.
 
@@ -81,11 +81,11 @@ public static byte[] Open(string cipherText, byte[] nonce, byte[] key)
 
 The `Open()` method decrypts a `cipherText` produced by `Create()`, with a `key` and a `nonce`.
 
-The `key` must be 32 bytes, otherwise the method throws a `KeyOutOfRangeException`.
+The `key` must be `32` bytes, otherwise the method throws a `KeyOutOfRangeException`.
 
-The `nonce` must be 24 bytes, otherwise the method throws a `NonceOutOfRangeException`.
+The `nonce` must be `24` bytes, otherwise the method throws a `NonceOutOfRangeException`.
 
-The `cipherText` is a combination of an authentication tag, whose length is 16 bytes immediately followed by the encrypted message.
+The `cipherText` is a combination of an authentication tag, whose length is `16` bytes immediately followed by the encrypted message.
 
 The method returns a byte array on success, or throws an `CryptographicException()` on failure.
 
@@ -121,9 +121,9 @@ public static DetachedBox CreateDetached(string message, byte[] nonce, byte[] ke
 
 The `CreateDetached()` method encrypts a `message`, with a `key` and a `nonce`.
 
-The `key` must be 32 bytes, otherwise the method throws a `KeyOutOfRangeException`.
+The `key` must be `32` bytes, otherwise the method throws a `KeyOutOfRangeException`.
 
-The `nonce` must be 24 bytes, otherwise the method throws a `NonceOutOfRangeException`.
+The `nonce` must be `24` bytes, otherwise the method throws a `NonceOutOfRangeException`.
 
 The method returns a `DetachedBox` on success, or throws an `CryptographicException()` on failure.
 
@@ -142,11 +142,11 @@ public static byte[] OpenDetached(DetachedBox detached, byte[] nonce, byte[] key
 
 The `OpenDetached()` method decrypts a `cipherText` produced by `CreateDetached()`, with a `mac`, `key` and a `nonce`.
 
-The `mac` must be 16 bytes, otherwise the method throws a `MacOutOfRangeException`.
+The `mac` must be `16` bytes, otherwise the method throws a `MacOutOfRangeException`.
 
-The `key` must be 32 bytes, otherwise the method throws a `KeyOutOfRangeException`.
+The `key` must be `32` bytes, otherwise the method throws a `KeyOutOfRangeException`.
 
-The `nonce` must be 24 bytes, otherwise the method throws a `NonceOutOfRangeException`.
+The `nonce` must be `24` bytes, otherwise the method throws a `NonceOutOfRangeException`.
 
 The same exceptions will be thrown on the overloaded version which used the `detached` object.
 

@@ -17,6 +17,6 @@ public static byte[] GetRandomBytes(int count)
 
 The `GetRandomBytes()` method takes a integer `count`, and produces an unpredictable sequence of bytes.
 
-This is suitable for use as a key or nonce.
+This is suitable for use as a key, salt or nonce.
 
-**Note:** In classes where appropriate, there are `GenerateKey()` and/or `GenerateNonce()` functions that return a byte array of the correct size.
+**Note:** In classes where appropriate, there are `GenerateKey()` and/or `GenerateNonce()` and/or `GenerateSalt()` functions that return a byte array of the correct size.

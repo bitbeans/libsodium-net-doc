@@ -14,7 +14,7 @@
 * [Hashing (wip)](hashing/README.md)
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
-* [Password hashing (wip)](password_hashing/README.md)
+* [Password hashing](password_hashing/README.md)
 * [Advanced (wip)](advanced/README.md)
    * [SHA-2 (wip)](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2 (wip)](advanced/hmac-sha2.md)
@@ -24,4 +24,4 @@
        * [ChaCha20 (wip)](advanced/chacha20.md)
        * [XSalsa20 (wip)](advanced/xsalsa20.md)
    * [Ed25519 to Curve25519 (wip)](advanced/ed25519-curve25519.md)
-
+* [Software that uses libsodium-net (wip)](software/README.md)
