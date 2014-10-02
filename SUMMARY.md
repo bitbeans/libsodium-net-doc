@@ -11,7 +11,7 @@
 * [Public-key cryptography (wip)](public-key_cryptography/README.md)
    * [Authenticated encryption (wip)](public-key_cryptography/authenticated_encryption.md)
    * [Public-key signatures (wip)](public-key_cryptography/public-key_signatures.md)
-* [Hashing (wip)](hashing/README.md)
+* [Hashing](hashing/README.md)
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
