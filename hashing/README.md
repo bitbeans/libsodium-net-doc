@@ -24,7 +24,7 @@
 ##Password hashing
 #### Common use cases:
 
-* Deriving keys from passwords and a salts
+* Deriving a key from a password and a salt
 * Protecting an on-disk secret key with a password,
 * Password storage, or rather: storing what it takes to verify a password without having to store the actual password.
 
