@@ -6,13 +6,13 @@ Keyed message authentication using HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA512/25
 ## Example
 
 ```csharp
-const string data = "Arbitrary data to hash";
+const string message = "Arbitrary message to authenticate";
 var key = SecretKeyAuth.GenerateKey(); //32 byte key
 
 //returns a 32 byte authentication code
-var signature = SecretKeyAuth.Sign(data, key);
+var signature = SecretKeyAuth.Sign(message, key);
 
-if (SecretKeyAuth.Verify(data, signature, key)) 
+if (SecretKeyAuth.Verify(message, signature, key)) 
 {
 	//message ok
 }
