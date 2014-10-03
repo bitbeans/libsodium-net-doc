@@ -11,7 +11,7 @@
 *Note: If you are looking for a faster and more secure alternative than `MD5` or `SHA1` you want this!*
 
 [Generic hashing documentation](generic_hashing.md)
-	
+
 ## Short-input hashing
 #### Common use cases:
 
@@ -20,7 +20,7 @@
 * Integrity checking in interactive protocols
 
 [Short-input hashing documentation](short-input_hashing.md)
-	
+
 ##Password hashing
 #### Common use cases:
 

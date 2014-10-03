@@ -12,11 +12,11 @@ var key = SecretKeyAuth.GenerateKey(); //32 byte key
 //returns a 32 byte authentication code
 var signature = SecretKeyAuth.Sign(message, key);
 
-if (SecretKeyAuth.Verify(message, signature, key)) 
+if (SecretKeyAuth.Verify(message, signature, key))
 {
 	//message ok
 }
-		
+
 ```
 
 ## Random Helpers
@@ -62,7 +62,7 @@ public static bool VerifyHmacSha256(string message, byte[] signature, byte[] key
 
 **Namespace:** `Sodium.SecretKeyAuth`
 
-The `VerifyHmacSha256()` function verifies a `message` with a `signature` and a `key` signed by `Sign()`.
+The `VerifyHmacSha256()` function verifies a `message` with a `signature` and a `key` signed by `SignHmacSha256()`.
 
 The `signature` must be `32` bytes, otherwise the method throws a `SignatureOutOfRangeException`.
 
@@ -102,7 +102,7 @@ public static bool VerifyHmacSha512(string message, byte[] signature, byte[] key
 
 **Namespace:** `Sodium.SecretKeyAuth`
 
-The `VerifyHmacSha512()` function verifies a `message` with a `signature` and a `key` signed by `Sign()`.
+The `VerifyHmacSha512()` function verifies a `message` with a `signature` and a `key` signed by `SignHmacSha512()`.
 
 The `signature` must be `64` bytes, otherwise the method throws a `SignatureOutOfRangeException`.
 

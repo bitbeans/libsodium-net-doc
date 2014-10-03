@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Authenticated encryption | libsodium-net</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../public-key_cryptography/public-key_signatures.html" />
+    
+    
+    <link rel="prev" href="../public-key_cryptography/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="5.1" data-basepath=".." data-revision="1412330970341">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="installation/README.html">
+            
+                
+                    <a href="../installation/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Installation
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="helpers/README.html">
+            
+                
+                    <a href="../helpers/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Utilities and Helper
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="generating_random_data/README.html">
+            
+                
+                    <a href="../generating_random_data/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Generating random data
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="secret-key_cryptography/README.html">
+            
+                
+                    <a href="../secret-key_cryptography/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Secret-key cryptography
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="secret-key_cryptography/authenticated_encryption.html">
+            
+                
+                    <a href="../secret-key_cryptography/authenticated_encryption.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Authenticated encryption
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="secret-key_cryptography/secret-key_authentication.html">
+            
+                
+                    <a href="../secret-key_cryptography/secret-key_authentication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         Authentication
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="secret-key_cryptography/aead.html">
+            
+                
+                    <a href="../secret-key_cryptography/aead.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         AEAD
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="public-key_cryptography/README.html">
+            
+                
+                    <a href="../public-key_cryptography/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Public-key cryptography
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="5.1" data-path="public-key_cryptography/authenticated_encryption.html">
+            
+                
+                    <a href="../public-key_cryptography/authenticated_encryption.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         Authenticated encryption
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="public-key_cryptography/public-key_signatures.html">
+            
+                
+                    <a href="../public-key_cryptography/public-key_signatures.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         Public-key signatures
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="hashing/README.html">
+            
+                
+                    <a href="../hashing/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         Hashing
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="hashing/generic_hashing.html">
+            
+                
+                    <a href="../hashing/generic_hashing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         Generic hashing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="hashing/short-input_hashing.html">
+            
+                
+                    <a href="../hashing/short-input_hashing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         Short-input hashing
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="password_hashing/README.html">
+            
+                
+                    <a href="../password_hashing/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         Password hashing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="advanced/README.html">
+            
+                
+                    <a href="../advanced/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Advanced
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="advanced/sha-2_hash_function.html">
+            
+                
+                    <a href="../advanced/sha-2_hash_function.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         SHA-2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="advanced/hmac-sha2.html">
+            
+                
+                    <a href="../advanced/hmac-sha2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         HMAC-SHA-2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.3" data-path="advanced/poly1305.html">
+            
+                
+                    <a href="../advanced/poly1305.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                         One-time authentication
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.4" data-path="advanced/scalar_multiplication.html">
+            
+                
+                    <a href="../advanced/scalar_multiplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                         Diffie-Hellman
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5" data-path="advanced/stream_ciphers.html">
+            
+                
+                    <a href="../advanced/stream_ciphers.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                         Stream ciphers
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.5.1" data-path="advanced/chacha20.html">
+            
+                
+                    <a href="../advanced/chacha20.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.1.</b>
+                        
+                         ChaCha20
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.2" data-path="advanced/xsalsa20.html">
+            
+                
+                    <a href="../advanced/xsalsa20.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.2.</b>
+                        
+                         XSalsa20
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6" data-path="advanced/ed25519-curve25519.html">
+            
+                
+                    <a href="../advanced/ed25519-curve25519.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                         Ed25519 to Curve25519
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="software/README.html">
+            
+                
+                    <a href="../software/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         Software that uses libsodium-net
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >libsodium-net</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_23866">
+                    
+                        <h1 id="public-key-authenticated-encryption">Public-key authenticated encryption</h1>
+<h2 id="example-combined-mode">Example combined mode</h2>
+<pre><code class="lang-csharp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">string</span> MESSAGE = <span class="hljs-string">"hello bob"</span>;
+<span class="hljs-keyword">var</span> alice = PublicKeyBox.GenerateKeyPair();
+<span class="hljs-keyword">var</span> bob = PublicKeyBox.GenerateKeyPair();
+
+<span class="hljs-keyword">var</span> nonce = PublicKeyBox.GenerateNonce();
+
+<span class="hljs-comment">//alice encrypts a message for bob</span>
+<span class="hljs-keyword">var</span> encrypted = PublicKeyBox.Create(MESSAGE, nonce, alice.PrivateKey, bob.PublicKey);
+<span class="hljs-comment">//bob decrypt the message</span>
+<span class="hljs-keyword">var</span> decrypted = PublicKeyBox.Open(encrypted, nonce, bob.PrivateKey, alice.PublicKey);
+</code></pre>
+<h2 id="random-helpers">Random Helpers</h2>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> KeyPair <span class="hljs-title">GenerateKeyPair</span><span class="hljs-params">()</span></span>
+</code></pre>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>Uses <code>Sodium.SodiumCore.GetRandomBytes()</code> to generate a key pair based on a random seed.</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> KeyPair <span class="hljs-title">GenerateKeyPair</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] privateKey)</span></span>
+</code></pre>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>Uses <code>Sodium.SodiumCore.GetRandomBytes()</code> to generate a key pair based on the provided private key.</p>
+<p>The <code>privateKey</code> seed must be <code>32</code> bytes, otherwise the function throws a <code>SeedOutOfRangeException</code>.</p>
+<p><code>libsodium-net</code> <a href="../helpers/README.html">KeyPair</a></p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] GenerateNonce()
+</code></pre>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>Uses <code>Sodium.SodiumCore.GetRandomBytes()</code> to generate a 24 byte nonce.</p>
+<h2 id="purpose">Purpose</h2>
+<p>Using public-key authenticated encryption, Bob can encrypt a confidential message specifically for Alice, using Alice&#39;s public key.</p>
+<p>Using Bob&#39;s public key, Alice can verify that the encrypted message was actually created by Bob and was not tampered with, before eventually decrypting it.</p>
+<p>Alice only needs Bob&#39;s public key, the nonce and the ciphertext. Bob should never ever share his secret key, even with Alice.</p>
+<p>And in order to send messages to Alice, Bob only needs Alice&#39;s public key. Alice should never ever share her secret key either, even with Bob.</p>
+<p>Alice can reply to Bob using the same system, without having to generate a distinct key pair.</p>
+<p>The nonce doesn&#39;t have to be confidential, but it should be used with just one invokation of <code>Open()</code> for a particular pair of public and secret keys.</p>
+<p>One easy way to generate a nonce is to use <code>PublicKeyBox.GenerateNonce()</code>, considering the size of nonces the risk of any random collisions is negligible. For some applications, if you wish to use nonces to detect missing messages or to ignore replayed messages, it is also ok to use a simple incrementing counter as a nonce.</p>
+<p>When doing so you must ensure that the same value can never be re-used (for example you may have multiple threads or even hosts generating messages using the same key pairs).</p>
+<p>This system provides mutual authentication. However, a typical use case is to secure communications between a server, whose public key is known in advance, and clients connecting anonymously.</p>
+<h2 id="combined-mode">Combined mode</h2>
+<p>In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want, as</p>
+<h3 id="encrypt">Encrypt</h3>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] Create(<span class="hljs-keyword">byte</span>[] message, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)
+
+<span class="hljs-comment">//there exists an overloaded version:</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] Create(<span class="hljs-keyword">string</span> message, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)
+</code></pre>
+<p><em>This is the .NET equivalent of <code>crypto_box_easy</code>.</em></p>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>The <code>Create()</code> function encrypts a <code>message</code>, with a recipient&#39;s <code>publicKey</code>, a sender&#39;s <code>secretKey</code> and a <code>nonce</code>.</p>
+<p>The <code>secretKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>publicKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>nonce</code> must be <code>24</code> bytes, otherwise the function throws a <code>NonceOutOfRangeException</code>.</p>
+<p>The function returns a byte array (encrypted message) on success, or throws an <code>CryptographicException()</code> on failure.</p>
+<h3 id="decrypt">Decrypt</h3>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] Open(<span class="hljs-keyword">byte</span>[] cipherText, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)
+</code></pre>
+<p><em>This is the .NET equivalent of <code>crypto_box_open_easy</code>.</em></p>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>The <code>Open()</code> function decrypts a message <code>cipherText</code>, with a recipient&#39;s <code>secretKey</code>, a sender&#39;s <code>publicKey</code> and a <code>nonce</code>.</p>
+<p>The <code>secretKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>publicKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>nonce</code> must be <code>24</code> bytes, otherwise the function throws a <code>NonceOutOfRangeException</code>.</p>
+<p>The function returns a byte array (unencrypted message) on success, or throws an <code>CryptographicException()</code> on failure.</p>
+<h2 id="detached-mode">Detached mode</h2>
+<p>Some applications may need to store the authentication tag and the encrypted message at different locations.</p>
+<p>For this specific use case, &quot;detached&quot; variants of the functions above are available.</p>
+<p><strong>Note:</strong> Because <code>libsodium-net</code> do not work with pointers like <code>libsodium</code> we make use of a <code>DetachedBox</code> object instead:</p>
+<pre><code class="lang-csharp"><span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;param name="cipherText"&gt;</span>The cipher.<span class="hljs-xmlDocTag">&lt;/param&gt;</span></span>
+<span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;param name="mac"&gt;</span>The 16 byte mac.<span class="hljs-xmlDocTag">&lt;/param&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DetachedBox</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] cipherText, <span class="hljs-keyword">byte</span>[] mac)</span>
+</span>{
+  CipherText = cipherText;
+  Mac = mac;
+}
+</code></pre>
+<h3 id="encrypt">Encrypt</h3>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DetachedBox <span class="hljs-title">CreateDetached</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] message, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)</span>
+
+<span class="hljs-comment">//there exists an overloaded version:</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DetachedBox <span class="hljs-title">CreateDetached</span><span class="hljs-params">(<span class="hljs-keyword">string</span> message, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)</span></span>
+</code></pre>
+<p><em>This is the .NET equivalent of <code>crypto_box_detached</code>.</em></p>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>The <code>CreateDetached()</code> function encrypts a <code>message</code>, with a recipient&#39;s <code>publicKey</code>, a sender&#39;s <code>secretKey</code> and a <code>nonce</code>.</p>
+<p>The <code>secretKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>publicKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>nonce</code> must be <code>24</code> bytes, otherwise the function throws a <code>NonceOutOfRangeException</code>.</p>
+<p>The function returns a <code>DetachedBox</code> on success, or throws an <code>CryptographicException()</code> on failure.</p>
+<h3 id="decrypt">Decrypt</h3>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] OpenDetached(<span class="hljs-keyword">byte</span>[] cipherText, <span class="hljs-keyword">byte</span>[] mac, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)
+
+<span class="hljs-comment">//there exists some overloaded versions:</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] OpenDetached(<span class="hljs-keyword">string</span> cipherText, <span class="hljs-keyword">byte</span>[] mac, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] OpenDetached(DetachedBox detached, <span class="hljs-keyword">byte</span>[] nonce, <span class="hljs-keyword">byte</span>[] secretKey, <span class="hljs-keyword">byte</span>[] publicKey)
+</code></pre>
+<p><em>This is the .NET equivalent of <code>crypto_box_open_detached</code>.</em></p>
+<p><strong>Namespace:</strong> <code>Sodium.PublicKeyBox</code></p>
+<p>The <code>OpenDetached()</code> function decrypts a message <code>cipherText</code>, with a recipient&#39;s <code>secretKey</code>, a sender&#39;s <code>publicKey</code>, a<code>mac</code> and a <code>nonce</code>.</p>
+<p>The <code>secretKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>publicKey</code> must be <code>32</code> bytes, otherwise the function throws a <code>KeyOutOfRangeException</code>.</p>
+<p>The <code>nonce</code> must be <code>24</code> bytes, otherwise the function throws a <code>NonceOutOfRangeException</code>.</p>
+<p>The <code>mac</code> must be <code>16</code> bytes, otherwise the method throws a <code>MacOutOfRangeException</code>.</p>
+<p>The same exceptions will be thrown on the overloaded version which used the <code>detached</code> object.</p>
+<p>The function returns a byte array (unencrypted message) on success, or throws an <code>CryptographicException()</code> on failure.</p>
+<h2 id="algorithm-details">Algorithm details</h2>
+<ul>
+<li>Key exchange: Curve25519</li>
+<li>Encryption: XSalsa20 stream cipher</li>
+<li>Authentication: Poly1305 MAC</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../public-key_cryptography/README.html" class="navigation navigation-prev " aria-label="Previous page: Public-key cryptography"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../public-key_cryptography/public-key_signatures.html" class="navigation navigation-next " aria-label="Next page: Public-key signatures"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":"white","family":"sans","size":1}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

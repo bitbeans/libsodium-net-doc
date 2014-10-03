@@ -10,7 +10,7 @@ var message = "This is an easy example";
 //encrypt the message
 var ciphertext = SecretBox.Create(message, nonce, key);
 //decrypt it again
-var message2 = SecretBox.Open(ciphertext, nonce, key);	
+var message2 = SecretBox.Open(ciphertext, nonce, key);
 ```
 
 ## Purpose
@@ -21,7 +21,7 @@ This operation:
 
 A single key is used both to encrypt/sign and verify/decrypt messages. For this reason, it is critical to keep the key confidential.
 
-The nonce doesn't have to be confidential, but it should never ever be reused with the same key. 
+The nonce doesn't have to be confidential, but it should never ever be reused with the same key.
 
 The easiest way to generate a nonce is to use `Sodium.SecretBox.GenerateNonce()` which uses `Sodium.SodiumCore.GetRandomBytes()` with the proper length.
 
