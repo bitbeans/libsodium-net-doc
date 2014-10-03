@@ -6,6 +6,7 @@ libsodium-net, or better said, [libsodium](https://github.com/jedisct1/libsodium
 
 - [Github repository](https://github.com/adamcaudill/libsodium-net)
 - [Tarballs and pre-compiled binaries](https://github.com/adamcaudill/libsodium-net/releases)
+- [Documentation](https://www.gitbook.io/book/bitbeans/libsodium-net)
 
 ## Requirements & Versions
 
