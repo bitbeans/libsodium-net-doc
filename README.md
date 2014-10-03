@@ -26,7 +26,3 @@ NaCl has been released to the public domain to avoid copyright issues. libsodium
 This documentation is a copy of the [original](http://doc.libsodium.org/) written by Frank Denis (@jedisct1).
 
 Feel free to contribute.
-
-## Status
-
-Not yet published.
