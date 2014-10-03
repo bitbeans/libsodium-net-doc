@@ -19,7 +19,7 @@ const string PASSWORD = "Correct Horse Battery Staple";
 //this will produce a 32 byte hash
 var hash = PasswordHash.ScryptHashString(PASSWORD, PasswordHash.Strength.Moderate);
 
-if (PasswordHash.ScryptHashStringVerify(hash, PASSWORD) 
+if (PasswordHash.ScryptHashStringVerify(hash, PASSWORD)
 {
 	//correct password
 }
@@ -116,7 +116,7 @@ The function returns a byte array on success, and throws an `OutOfMemoryExceptio
 public static string ScryptHashString(string password, long opsLimit, int memLimit)
 
 //there exists an overloaded version:
-public static string ScryptHashString(string password, Strength limit = Strength.Interactive)						   
+public static string ScryptHashString(string password, Strength limit = Strength.Interactive)
 ```
 *This is the .NET equivalent of `crypto_pwhash_scryptsalsa208sha256_str`.*
 
@@ -144,7 +144,7 @@ The function returns a byte array on success, and throws an `OutOfMemoryExceptio
 public static bool ScryptHashStringVerify(byte[] hash, byte[] password)
 
 //there exists an overloaded version:
-public static bool ScryptHashStringVerify(string hash, string password)					   
+public static bool ScryptHashStringVerify(string hash, string password)
 ```
 *This is the .NET equivalent of `crypto_pwhash_scryptsalsa208sha256_str_verify`.*
 

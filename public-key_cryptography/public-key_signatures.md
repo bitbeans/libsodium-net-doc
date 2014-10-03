@@ -29,6 +29,16 @@ if (PublicKeyAuth.VerifyDetached(signature, MESSAGE, keyPair.PublicKey))
 }
 ```
 
+## Purpose
+
+In this system, a signer generates a key pair:
+- a secret key, that will be used to append a seal to any number of messages
+- a public key, that anybody can use to verify that the seal appended to a message was actually issued by the creator of the public key.
+
+Verifiers need to already know and ultimately trust a public key before messages sealed using it can be verified.
+
+*Warning:* this is different from authenticated encryption. Appending a seal does not change the representation of the message itself.
+
 ## Random Helpers
 
 ```csharp
@@ -48,16 +58,6 @@ Uses `Sodium.SodiumCore.GetRandomBytes()` to generate a key pair based on the pr
 The `privateKey` seed must be `64` bytes, otherwise the function throws a `SeedOutOfRangeException`.
 
 `libsodium-net` [KeyPair](../helpers/README.md)
-
-## Purpose
-
-In this system, a signer generates a key pair:
-- a secret key, that will be used to append a seal to any number of messages
-- a public key, that anybody can use to verify that the seal appended to a message was actually issued by the creator of the public key.
-
-Verifiers need to already know and ultimately trust a public key before messages sealed using it can be verified.
-
-*Warning:* this is different from authenticated encryption. Appending a seal does not change the representation of the message itself.
 
 ## Combined mode
 

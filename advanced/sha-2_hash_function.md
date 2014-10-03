@@ -12,7 +12,7 @@ If you are looking for a generic hash function and not specifically SHA-2, using
 const string MESSAGE = "Message to hash";
 
 //returns a 32 byte hash
-var hash = CryptoHash.Sha256(MESSAGE);	  
+var hash = CryptoHash.Sha256(MESSAGE);
 ```
 
 ## SHA-512 example
@@ -21,7 +21,7 @@ var hash = CryptoHash.Sha256(MESSAGE);
 const string MESSAGE = "Message to hash";
 
 //returns a 64 byte hash
-var hash = CryptoHash.Sha512(MESSAGE);	  
+var hash = CryptoHash.Sha512(MESSAGE);
 ```
 
 ## Usage

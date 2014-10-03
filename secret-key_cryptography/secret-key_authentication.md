@@ -15,15 +15,6 @@ if (SecretKeyAuth.Verify(message, signature, key))
 }
 ```
 
-## Random Helpers
-
-```csharp
-public static byte[] GenerateKey()
-```
-**Namespace:** `Sodium.SecretKeyAuth`
-
-Uses `Sodium.SodiumCore.GetRandomBytes()` to generate a 32 byte key.
-
 ## Purpose
 
 This operation computes an authentication tag for a message and a secret key, and provides a way to verify that a given tag is valid for a given message and a key.
@@ -39,6 +30,16 @@ A typical use case is:
 - `A` uses the authentication tag to verify that it created this message.
 
 This operation does *not* encrypt the message. It only computes and verifies an authentication tag.
+
+
+## Random Helpers
+
+```csharp
+public static byte[] GenerateKey()
+```
+**Namespace:** `Sodium.SecretKeyAuth`
+
+Uses `Sodium.SodiumCore.GetRandomBytes()` to generate a 32 byte key.
 
 ## Usage
 
