@@ -8,13 +8,13 @@
 - Encrypts a message with a key and a nonce to keep it confidential
 - Computes an authentication tag. This tag is used to make sure that the message hasn't been tampered with before decrypting it.
 
-[Secret-key authenticated encryption](secret-key_cryptography/authenticated_encryption.md)
+[Secret-key authenticated encryption](authenticated_encryption.md)
 
 ## Secret-key authentication
 
 Authenticate or verifie a message with an authentication tag, this does not encrypt the message.
 
-[Secret-key authentication](secret-key_cryptography/secret-key_authentication.md)
+[Secret-key authentication](secret-key_authentication.md)
 
 ## Authenticated Encryption with Additional Data
 
@@ -23,4 +23,4 @@ Authenticate or verifie a message with an authentication tag, this does not encr
 
 A typical use case for additional data is to store protocol-specific metadata about the message, such as its length and encoding.
 
-[Authenticated Encryption with Additional Data](secret-key_cryptography/aead.md)
+[Authenticated Encryption with Additional Data](aead.md)
