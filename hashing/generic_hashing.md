@@ -27,7 +27,7 @@ var personal = "5126fb2a37400d2a";
 var message = "Arbitrary data to hash";
 
 //returns a 64 byte hash
-var generichash = GenericHash.HashSaltPersonal(message, null, salt, personal);
+var generichash = GenericHash.HashSaltPersonal(message, null, salt, personal, 64);
 ```
 
 ## GenericHash with a key, a salt and a personal
@@ -38,8 +38,8 @@ var salt = "5b6b41ed9b343fe0";
 var personal = "5126fb2a37400d2a";
 var message = "Arbitrary data to hash";
 
-//returns a 64 byte hash
-var generichash = GenericHash.HashSaltPersonal(message, key, salt, personal);
+//returns a 32 byte hash
+var generichash = GenericHash.HashSaltPersonal(message, key, salt, personal, 32);
 ```
 
 ## Multi-part examples
@@ -99,10 +99,10 @@ The key size can by any value between `16` (included) and `64` (included) otherw
 ### HashSaltPersonal
 
 ```csharp
-public static byte[] HashSaltPersonal(byte[] message, byte[] key, byte[] salt, byte[] personal)
+public static byte[] HashSaltPersonal(byte[] message, byte[] key, byte[] salt, byte[] personal, int bytes)
 
 //there exists an overloaded version:
-public static byte[] HashSaltPersonal(string message, string key, string salt, string personal)
+public static byte[] HashSaltPersonal(string message, string key, string salt, string personal, int bytes)
 ```
 *This is the .NET equivalent of `crypto_generichash_blake2b_salt_personal`.*
 
@@ -110,7 +110,9 @@ public static byte[] HashSaltPersonal(string message, string key, string salt, s
 
 The `HashSaltPersonal()` method returns a fingerprint based on a salt, a personal and an optional key.
 
-The output size is always `64` byte.
+The minimum recommended output size is `64`. This size makes it practically impossible for two messages to produce the same fingerprint.
+
+But for specific use cases, the size can be any value between `16` (included) and `64` (included) otherwise the method throws a `BytesOutOfRangeException`.
 
 The `key` can be `NULL`, or must be in range between `16` (included) and `64` (included), otherwise the method throws a `KeyOutOfRangeException`.
 
