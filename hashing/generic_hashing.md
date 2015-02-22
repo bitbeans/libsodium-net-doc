@@ -44,7 +44,26 @@ var generichash = GenericHash.HashSaltPersonal(message, key, salt, personal, 32)
 
 ## Multi-part examples
 
-**Note:** Only libsodium's simplified interface is currently supported; the streaming interface is not implemented at this time.
+```csharp
+var key = GenericHash.GenerateKey(); //64 byte key
+var stream = new MemoryStream(Encoding.UTF8.GetBytes("Arbitrary stream data to hash"));
+var hashStream = new GenericHash.GenericHashAlgorithm(key, 64);
+
+//returns a 64 byte hash
+var generichash = hashStream.ComputeHash(stream);
+```
+
+```csharp
+using (FileStream stream = File.OpenRead(@"C:\bigfile.data"))
+{
+    var key = GenericHash.GenerateKey(); //64 byte key
+    var hashStream = new GenericHash.GenericHashAlgorithm(key, 32);
+
+    //returns a 32 byte hash of the given file
+    var generichash = hashStream.ComputeHash(stream);
+}
+```
+
 
 ## Purpose
 
@@ -123,6 +142,23 @@ The `salt` must be `16` bytes, otherwise the method throws a `SaltOutOfRangeExce
 The `personal` must be `16` bytes, otherwise the method throws a `PersonalOutOfRangeException`.
 
 If there is no `message`, `salt` or `personal` specified the method will throw an `ArgumentNullException`.
+
+### GenericHashAlgorithm
+
+```csharp
+public GenericHashAlgorithm(byte[] key, int bytes)
+
+//there exists an overloaded version:
+public HashSaltPersonal(string key, int bytes)
+```
+*This is the .NET equivalent of `crypto_generichash_init`, `crypto_generichash_update`, and `crypto_generichash_final`.*
+
+**Namespace:** `Sodium.GenericHash`
+
+This method have the same initial requirements as `Sodium.GenericHash.Hash()`.
+But it inherits from `System.Security.Cryptography.HashAlgorithm`, so it`s suitable for hashing streams (see Multi-part example on this page).
+
+This alternative API is especially useful to process very large files and data streams.
 
 ## Algorithm details
 
