@@ -41,8 +41,8 @@ var secretShared = ScalarMult.Mult(aliceSecretKey, bobPublicKey);
 
 ```csharp
 // Generate Alice's and Bob's key pairs
-var bob = PublicBox.GenerateKeyPair();
-var alice = PublicBox.GenerateKeyPair();
+var bob = PublicKeyBox.GenerateKeyPair();
+var alice = PublicKeyBox.GenerateKeyPair();
 
 // Now alice and bob exchange public keys
 // To keep this example simple the network, and public key exchanges are
