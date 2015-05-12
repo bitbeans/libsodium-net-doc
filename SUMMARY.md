@@ -11,6 +11,7 @@
 * [Public-key cryptography](public-key_cryptography/README.md)
    * [Authenticated encryption](public-key_cryptography/authenticated_encryption.md)
    * [Public-key signatures](public-key_cryptography/public-key_signatures.md)
+   * [Sealed Boxes](public-key_cryptography/sealed_boxes.md)
 * [Hashing](hashing/README.md)
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
@@ -25,3 +26,4 @@
        * [XSalsa20](advanced/xsalsa20.md)
    * [Ed25519 to Curve25519 (wip)](advanced/ed25519-curve25519.md)
 * [Software that uses libsodium-net](software/README.md)
+

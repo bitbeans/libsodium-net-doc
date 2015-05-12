@@ -15,3 +15,8 @@ Sign or verifie a message, without encryting it.
 
 [Public-key signatures](public-key_signatures.md)
 
+## Sealed Boxes
+
+Anonymously send encrypted messages.
+
+[Sealed Boxes](sealed_boxes.md)
