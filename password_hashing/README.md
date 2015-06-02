@@ -8,7 +8,7 @@ const string SALT = "qa~t](84z<1t<1oz:ik.@IRNyhG=8q(o";
 const long OUTPUT_LENGTH = 512;
 
 //this will produce a 512 byte hash
-var hash = PasswordHash.ScryptHashBinary(PASSWORD, SALT, PasswordHash.Strength.Moderate, OUTPUT_LENGTH);
+var hash = PasswordHash.ScryptHashBinary(PASSWORD, SALT, PasswordHash.Strength.Medium, OUTPUT_LENGTH);
 ```
 
 ## Example 2: password storage
@@ -17,7 +17,7 @@ var hash = PasswordHash.ScryptHashBinary(PASSWORD, SALT, PasswordHash.Strength.M
 const string PASSWORD = "Correct Horse Battery Staple";
 
 //this will produce a 32 byte hash
-var hash = PasswordHash.ScryptHashString(PASSWORD, PasswordHash.Strength.Moderate);
+var hash = PasswordHash.ScryptHashString(PASSWORD, PasswordHash.Strength.Medium);
 
 if (PasswordHash.ScryptHashStringVerify(hash, PASSWORD)
 {
@@ -58,7 +58,12 @@ public enum Strength
   /// <summary>For interactive sessions (fast: uses 16MB of RAM).</summary>
   Interactive,
   /// <summary>For normal use (moderate: uses 100MB of RAM).</summary>
+  [Obsolete("Use Strength.Medium instead.")]
   Moderate,
+  /// <summary>For normal use (moderate: uses 128MB of RAM).</summary>
+  Medium,
+  /// <summary>For more sensitive use (moderate: uses 128MB of RAM but higher opslimit).</summary>
+  MediumSlow,
   /// <summary>For highly sensitive data (slow: uses more than 1GB of RAM).</summary>
   Sensitive
 }
@@ -87,11 +92,11 @@ The `ScryptHashBinary()` function derives an `outputLength` bytes long key from 
 
 `memlimit` is the maximum amount of RAM that the function will use, in bytes. It is highly recommended to allow the function to use at least 16 megabytes.
 
-In **libsodium-net** are some predefined values: `Strength.Interactive`, `Strength.Moderate` and `Strength.Sensitive`.
+In **libsodium-net** are some predefined values: `Strength.Interactive`, `Strength.Moderate` (obsolete), `Strength.Medium`, `Strength.MediumSlow` and `Strength.Sensitive`.
 
 For interactive sessions, `Strength.Interactive` provide a safe base line for the `opsLimit` and `memLimit` parameters. However, using higher values may improve security. The `Strength.Interactive` uses `16777216` bytes of dedicated RAM and `524288` CPU cycles.
 
-For normal data, `Strength.Moderate` can be used. These setting use 100MB of RAM, and takes roughly 5 seconds to complete. The `Strength.Moderate` uses `100000000` bytes of dedicated RAM and `8388608` CPU cycles.
+For normal data, `Strength.Medium` can be used. These setting use 128MB of RAM, and takes roughly 5 seconds to complete. The `Strength.Medium` uses `134217728` bytes of dedicated RAM and `8388608` CPU cycles.
 
 For highly sensitive data, `Strength.Sensitive` can be used as an alternative. But with these parameters, deriving a key takes more than 10 seconds on a 2.8 Ghz Core i7 CPU and requires up to 1 gigabyte of dedicated RAM. The `Strength.Sensitive` uses `1073741824` bytes of dedicated RAM and `33554432` CPU cycles.
 
