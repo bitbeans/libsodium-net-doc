@@ -24,6 +24,6 @@
    * [Stream ciphers](advanced/stream_ciphers.md)
        * [ChaCha20](advanced/chacha20.md)
        * [XSalsa20](advanced/xsalsa20.md)
-   * [Ed25519 to Curve25519 (wip)](advanced/ed25519-curve25519.md)
+   * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
 * [Software that uses libsodium-net](software/README.md)
 
