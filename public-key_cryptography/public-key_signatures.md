@@ -55,7 +55,7 @@ public static KeyPair GenerateKeyPair(byte[] privateKey)
 
 Uses `Sodium.SodiumCore.GetRandomBytes()` to generate a key pair based on the provided private key.
 
-The `privateKey` seed must be `64` bytes, otherwise the function throws a `SeedOutOfRangeException`.
+The `privateKey` seed must be `32` bytes, otherwise the function throws a `SeedOutOfRangeException`.
 
 `libsodium-net` [KeyPair](../helpers/README.md)
 
@@ -137,6 +137,31 @@ The `signature` must be `64` bytes, otherwise the function throws a `SignatureOu
 
 The function returns `true` on success, otherwise `false`.
 
+## Extracting from the secret key
+
+The secret key actually includes the seed (either a random seed or the one given to `GenerateKeyPair(byte[] privateKey)`) as well as the public key.
+
+While the public key can always be derived from the seed, the precomputation saves a significant amount of CPU cycles when signing.
+
+If required, Sodium provides two functions to extract the seed and the public key from the secret key:
+
+### Extracting the seed from the secret key
+
+```csharp
+public static byte[] ExtractEd25519SeedFromEd25519SecretKey(byte[] ed25519SecretKey)
+```
+*This is the .NET equivalent of `crypto_sign_ed25519_sk_to_seed`.*
+
+**Namespace:** `Sodium.PublicKeyAuth`
+
+### Extracting the public key from the secret key
+
+```csharp
+public static byte[] ExtractEd25519PublicKeyFromEd25519SecretKey(byte[] ed25519SecretKey)
+```
+*This is the .NET equivalent of `crypto_sign_ed25519_sk_to_pk`.*
+
+**Namespace:** `Sodium.PublicKeyAuth`
 
 ## Algorithm details
 
