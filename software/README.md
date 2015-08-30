@@ -3,6 +3,8 @@
 ### Software
 
 * [CurveLock](https://github.com/adamcaudill/CurveLock) - Experimental File & Message Encryption for Windows
+* [lageant](https://github.com/bitbeans/lageant) - Libsodium Authentication Agent
+
 
 ### Libraries
 
