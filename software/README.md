@@ -4,7 +4,7 @@
 
 * [CurveLock](https://github.com/adamcaudill/CurveLock) - Experimental File & Message Encryption for Windows
 * [lageant](https://github.com/bitbeans/lageant) - Libsodium Authentication Agent
-
+* [knownpasswords-net](https://github.com/bitbeans/knownpasswords-net) - knownpasswords.org C# Bindings
 
 ### Libraries
 
