@@ -80,3 +80,29 @@ public enum HexCase
 }
 ```
 **Note:** This overload doesn't use the sodium_bin2hex implementation.
+
+### Incrementing large numbers
+
+```csharp
+public static byte[] Increment(byte[] value)
+```
+*This is the .NET equivalent of `sodium_increment`.*
+
+**Namespace:** `Sodium.Utilities`
+
+It runs in constant-time for a given length, and considers the number to be encoded in little-endian format.
+`Increment()` can be used to increment nonces in constant time.
+
+### Comparing large numbers
+
+```csharp
+public static bool Compare(byte[] a, byte[] b)
+```
+*This is the .NET equivalent of `sodium_compare`.*
+
+**Namespace:** `Sodium.Utilities`
+
+
+The comparison is done in constant time for a given length.
+
+This function can be used with nonces, in order to prevent replay attacks.

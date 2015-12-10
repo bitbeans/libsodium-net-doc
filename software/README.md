@@ -6,6 +6,7 @@
 * [lageant](https://github.com/bitbeans/lageant) - Libsodium Authentication Agent
 * [knownpasswords-net](https://github.com/bitbeans/knownpasswords-net) - knownpasswords.org C# Bindings
 
+
 ### Libraries
 
 * [StreamCryptor](https://github.com/bitbeans/StreamCryptor) - Stream encryption & decryption with libsodium and protobuf

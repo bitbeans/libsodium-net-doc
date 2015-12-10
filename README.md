@@ -10,9 +10,15 @@ libsodium-net, or better said, [libsodium](https://github.com/jedisct1/libsodium
 
 ## Requirements & Versions
 
-This library can be built in Visual Studio 2010, Xamarin Studio (MonoDevelop 3.x supported), and targets .NET 4.0; it is compiled against libsodium v1.0.0.
+This library can be built in Visual Studio 2010, Xamarin Studio (MonoDevelop 3.x supported), and targets .NET 4.0; it is compiled against libsodium v1.0.7.
 
 On OSX & Linux, your copy of libsodium must be compiled for the same architecture as your copy of Mono. If you are running a 32bit process, your copy of libsodium must be 32bit as well.
+
+##Notes
+
+Any method that takes a String, has an overload that accepts a byte array; Strings are assumed to be UTF8; if this is not the case, please convert it to bytes yourself and use the overloads that accept byte arrays.
+
+libsodium requires the Visual C++ Redistributable for Visual Studio 2015.
 
 ## File Signing
 
